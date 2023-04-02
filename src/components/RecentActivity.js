@@ -105,15 +105,13 @@ export default function RecentActivity() {
       </View>
       {/* Flatlist */}
 
-     <View style={{height: 300}}>  
-     <ScrollView>
+      <View style={{ height: 300 }}>
         <FlatList
           data={DATA}
           renderItem={renderItem}
           keyExtractor={(item) => item.id}
         />
-      </ScrollView>
-     </View>
+      </View>
     </View>
   );
 }
@@ -121,7 +119,6 @@ export default function RecentActivity() {
 const styles = StyleSheet.create({
   container: {
     paddingHorizontal: 30,
-  
   },
   headerView: {
     flexDirection: "row",

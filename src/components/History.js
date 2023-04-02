@@ -105,15 +105,13 @@ export default function History() {
       </View>
       {/* Flatlist */}
 
-     <View style={{height: 430}}>  
-     <ScrollView>
+      <View style={{ height: 430 }}>
         <FlatList
           data={DATA}
           renderItem={renderItem}
           keyExtractor={(item) => item.id}
         />
-      </ScrollView>
-     </View>
+      </View>
     </View>
   );
 }
@@ -121,7 +119,6 @@ export default function History() {
 const styles = StyleSheet.create({
   container: {
     paddingHorizontal: 5,
-  
   },
   headerView: {
     flexDirection: "row",

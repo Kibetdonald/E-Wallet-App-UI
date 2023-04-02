@@ -5,6 +5,7 @@ import {
   Image,
   FlatList,
   ScrollView,
+  Pressable,
 } from "react-native";
 import React from "react";
 import {
@@ -63,6 +64,9 @@ const Item = ({ title, icon }) => (
 const renderItem = ({ item }) => <Item title={item.title} icon={item.icon} />;
 
 export default function AccountScreen() {
+  const LoginNavigate = () => {
+    navigation.navigate("Login");
+  };
   return (
     <View style={styles.container}>
       <View style={styles.topWrapper}>
@@ -94,14 +98,15 @@ export default function AccountScreen() {
         </View>
       </View>
       {/* Profile */}
-
       <FlatList
         data={DATA}
         style={{ paddingHorizontal: 20 }}
         renderItem={renderItem}
         keyExtractor={(item) => item.id}
       />
-
+      <Pressable style={styles.btn} onPress={LoginNavigate}>
+        <Text style={styles.btnText}>Log Out</Text>
+      </Pressable>
       <BottomTab />
     </View>
   );
@@ -162,5 +167,18 @@ const styles = StyleSheet.create({
   profileTitle: {
     fontWeight: "500",
     fontSize: 15,
+  },
+  btn: {
+    backgroundColor: "#159fd0",
+    padding: 15,
+    width: "90%",
+    alignItems: "center",
+    marginLeft: "5%",
+    borderRadius: 5,
+    marginBottom: 50,
+  },
+  btnText: {
+    color: "#fff",
+    fontSize: 16,
   },
 });
